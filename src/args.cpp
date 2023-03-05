@@ -65,7 +65,6 @@ void reg_arg(
   const ArgumentParseConfig& parse_cfg,
   const char* help
 ) {
-  using std::strlen;
   size_t i = arg_cfg.parse_cfgs.size();
   if (strlen(short_flag) == 2 && short_flag[0] == '-') {
     arg_cfg.short_map[short_flag[1]] = i;
@@ -111,7 +110,7 @@ void parse_args(int argc, const char** argv) {
         }
         ++i;
       } else {
-        if (std::strcmp(arg + 2, "help") == 0) { print_help(); }
+        if (strcmp(arg + 2, "help") == 0) { print_help(); }
         // Long flag argument.
         auto it = (arg_cfg.long_map.find(arg + 2));
         if (it != arg_cfg.long_map.end()) {

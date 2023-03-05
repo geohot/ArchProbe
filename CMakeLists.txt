@@ -30,6 +30,7 @@ endif()
 
 set(LINK_LIBS
     OpenCL
+    dl
 )
 set(INC_DIRS
     "${PROJECT_SOURCE_DIR}/include"
